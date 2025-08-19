@@ -1,0 +1,179 @@
+# Nureke-Co11
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Нурхан — IT специалист</title>
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --text: #222;
+      --accent: #0078d7;
+    }
+    [data-theme="dark"] {
+      --bg: #1e1e1e;
+      --text: #eee;
+      --accent: #00bfff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    header, main, footer {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .lang-switch, .theme-switch {
+      margin: 1rem 0;
+    }
+    button {
+      margin-right: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: var(--accent);
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .contact-buttons a {
+      display: inline-block;
+      margin: 0.5rem 0.5rem 0 0;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .price, .reviews {
+      margin-top: 2rem;
+    }
+    .price-item, .review-item {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.05);
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <h1 id="title">Нурхан — IT специалист</h1>
+    <p id="subtitle">Создание сайтов, техподдержка, настройка устройств</p>
+
+    <div class="lang-switch">
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('kz')">KZ</button>
+    </div>
+
+    <div class="theme-switch">
+      <button onclick="toggleTheme()">🌗 Переключить тему</button>
+    </div>
+
+    <div class="contact-buttons">
+      <a href="https://wa.me/77001234567" target="_blank">WhatsApp</a>
+      <a href="https://t.me/nurkhan" target="_blank">Telegram</a>
+      <a href="tel:+77001234567">Позвонить</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="price">
+      <h2 id="price-title">Прайс</h2>
+      <div class="price-item">
+        <strong id="price1">Создание сайта — от 50 000 ₸</strong>
+      </div>
+      <div class="price-item">
+        <strong id="price2">Настройка устройств — от 10 000 ₸</strong>
+      </div>
+      <div class="price-item">
+        <strong id="price3">Техподдержка — от 5 000 ₸</strong>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2 id="reviews-title">Отзывы</h2>
+      <div class="review-item">
+        <em id="review1">“Очень профессионально, быстро и качественно!” — Айдана</em>
+      </div>
+      <div class="review-item">
+        <em id="review2">“Сайт выглядит дорого и современно. Рекомендую!” — Тимур</em>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">© 2025 Нурхан. Все права защищены.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      ru: {
+        title: "Нурхан — IT специалист",
+        subtitle: "Создание сайтов, техподдержка, настройка устройств",
+        priceTitle: "Прайс",
+        price1: "Создание сайта — от 50 000 ₸",
+        price2: "Настройка устройств — от 10 000 ₸",
+        price3: "Техподдержка — от 5 000 ₸",
+        reviewsTitle: "Отзывы",
+        review1: "“Очень профессионально, быстро и качественно!” — Айдана",
+        review2: "“Сайт выглядит дорого и современно. Рекомендую!” — Тимур",
+        footer: "© 2025 Нурхан. Все права защищены."
+      },
+      en: {
+        title: "Nurkhan — IT Specialist",
+        subtitle: "Website creation, tech support, device setup",
+        priceTitle: "Price List",
+        price1: "Website creation — from 50,000 ₸",
+        price2: "Device setup — from 10,000 ₸",
+        price3: "Tech support — from 5,000 ₸",
+        reviewsTitle: "Reviews",
+        review1: "“Very professional, fast and high-quality!” — Aidana",
+        review2: "“The site looks premium and modern. Highly recommend!” — Timur",
+        footer: "© 2025 Nurkhan. All rights reserved."
+      },
+      kz: {
+        title: "Нурхан — IT маман",
+        subtitle: "Сайт жасау, техникалық қолдау, құрылғыларды баптау",
+        priceTitle: "Бағалар",
+        price1: "Сайт жасау — 50 000 ₸ бастап",
+        price2: "Құрылғыны баптау — 10 000 ₸ бастап",
+        price3: "Техқолдау — 5 000 ₸ бастап",
+        reviewsTitle: "Пікірлер",
+        review1: "“Өте кәсіби, жылдам және сапалы!” — Айдана",
+        review2: "“Сайт заманауи және қымбат көрінеді. Ұсынамын!” — Тимур",
+        footer: "© 2025 Нурхан. Барлық құқықтар қорғалған."
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("price-title").textContent = t.priceTitle;
+      document.getElementById("price1").textContent = t.price1;
+      document.getElementById("price2").textContent = t.price2;
+      document.getElementById("price3").textContent = t.price3;
+      document.getElementById("reviews-title").textContent = t.reviewsTitle;
+      document.getElementById("review1").textContent = t.review1;
+      document.getElementById("review2").textContent = t.review2;
+      document.getElementById("footer-text").textContent = t.footer;
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const current = body.getAttribute("data-theme");
+      body.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    }
+  </script>
+</body>
+</html>
